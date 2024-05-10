@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Lesson_29</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .col-4 {
+            margin: 3% 10% 0 10%;
+            width: 10%;
+            box-shadow: 5px 5px 20px 5px rgba(5, 4, 4, 0.44);
+        }
+        .card-text{
+            font-weight: bold;
+        }
+        .star-rating{
+            font-size: 0;
+        }
+        .star-rating__wrap{
+            display: inline-block;
+            font-size: 1rem;
+        }
+        .star-rating__wrap:after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .star-rating__ico{
+            float: right;
+            padding-left: 2px;
+            cursor: pointer;
+            color: #FFB300;
+        }
+        .star-rating__ico:last-child{
+            padding-left: 0;
+        }
+        .star-rating__input{
+            display: none;
+        }
+        .star-rating__ico:hover:before,
+        .star-rating__ico:hover ~ .star-rating__ico:before,
+        .star-rating__input:checked ~ .star-rating__ico:before
+        {
+            content: "\f005";
+        }
+    </style>
+</head>
+<body background="vegetables.jpg">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="eggplant.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Баклажан</h5>
+                    <p class="card-text">
+                        Привоз: Индия, Мумбаи<br>
+                        Дата привоза: 02.05.2024<br>
+                        Цена за кг.: 12 р.
+                    </p>
+                    <form>
+                        <div class="form-group">
+                            <label>Ваша оценка</label>
+                            <div class="star-rating">
+                                <div class="star-rating__wrap">
+                                    <input class="star-rating__input" id="star-5" type="radio" name="rating" value="5">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-5" title="Отлично"></label>
+                                    <input class="star-rating__input" id="star-4" type="radio" name="rating" value="4">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-4" title="Хорошо"></label>
+                                    <input class="star-rating__input" id="star-3" type="radio" name="rating" value="3">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-3" title="Удовлетворительно"></label>
+                                    <input class="star-rating__input" id="star-2" type="radio" name="rating" value="2">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-2" title="Плохо"></label>
+                                    <input class="star-rating__input" id="star-1" type="radio" name="rating" value="1">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-1" title="Ужасно"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </form>
+                    <a href="#" class="btn btn-primary">Купить</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="zucchini.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Кабачок</h5>
+                    <p class="card-text">
+                        Привоз: Россия, Калиненград<br>
+                        Дата привоза: 28.04.2024<br>
+                        Цена за кг.: 10 р.
+                    </p>
+                    <form>
+                        <div class="form-group">
+                            <label>Ваша оценка</label>
+                            <div class="star-rating">
+                                <div class="star-rating__wrap">
+                                    <input class="star-rating__input" id="star-10" type="radio" name="rating" value="5">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-5" title="Отлично"></label>
+                                    <input class="star-rating__input" id="star-9" type="radio" name="rating" value="4">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-4" title="Хорошо"></label>
+                                    <input class="star-rating__input" id="star-8" type="radio" name="rating" value="3">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-3" title="Удовлетворительно"></label>
+                                    <input class="star-rating__input" id="star-7" type="radio" name="rating" value="2">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-2" title="Плохо"></label>
+                                    <input class="star-rating__input" id="star-6" type="radio" name="rating" value="1">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-1" title="Ужасно"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </form>
+                    <a href="#" class="btn btn-primary">Купить</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="cucumber.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Огурец</h5>
+                    <p class="card-text">
+                        Привоз: РБ, Брест<br>
+                        Дата привоза: 15.04.2024<br>
+                        Цена за кг.: 5 р.
+                    </p>
+                    <form>
+                        <div class="form-group">
+                            <label>Ваша оценка</label>
+                            <div class="star-rating">
+                                <div class="star-rating__wrap">
+                                    <input class="star-rating__input" id="star-15" type="radio" name="rating" value="5">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-5" title="Отлично"></label>
+                                    <input class="star-rating__input" id="star-14" type="radio" name="rating" value="4">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-4" title="Хорошо"></label>
+                                    <input class="star-rating__input" id="star-13" type="radio" name="rating" value="3">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-3" title="Удовлетворительно"></label>
+                                    <input class="star-rating__input" id="star-12" type="radio" name="rating" value="2">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-2" title="Плохо"></label>
+                                    <input class="star-rating__input" id="star-11" type="radio" name="rating" value="1">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-1" title="Ужасно"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </form>
+                    <a href="#" class="btn btn-primary">Купить</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="peppers.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Перец</h5>
+                    <p class="card-text">
+                        Привоз: Болгария, Ямбол<br>
+                        Дата привоза: 07.05.2024<br>
+                        Цена за кг.: 14 р .
+                    </p>
+                    <form>
+                        <div class="form-group">
+                            <label>Ваша оценка</label>
+                            <div class="star-rating">
+                                <div class="star-rating__wrap">
+                                    <input class="star-rating__input" id="star-20" type="radio" name="rating" value="5">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-5" title="Отлично"></label>
+                                    <input class="star-rating__input" id="star-19" type="radio" name="rating" value="4">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-4" title="Хорошо"></label>
+                                    <input class="star-rating__input" id="star-18" type="radio" name="rating" value="3">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-3" title="Удовлетворительно"></label>
+                                    <input class="star-rating__input" id="star-17" type="radio" name="rating" value="2">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-2" title="Плохо"></label>
+                                    <input class="star-rating__input" id="star-16" type="radio" name="rating" value="1">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-1" title="Ужасно"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </form>
+                    <a href="#" class="btn btn-primary">Купить</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="potato.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Картошка</h5>
+                    <p class="card-text">
+                        Привоз: Россия, Краснодар<br>
+                        Дата привоза: 18.04.2024<br>
+                        Цена за кг.: 6 р.
+                    </p>
+                    <form>
+                        <div class="form-group">
+                            <label>Ваша оценка</label>
+                            <div class="star-rating">
+                                <div class="star-rating__wrap">
+                                    <input class="star-rating__input" id="star-25" type="radio" name="rating" value="5">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-5" title="Отлично"></label>
+                                    <input class="star-rating__input" id="star-24" type="radio" name="rating" value="4">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-4" title="Хорошо"></label>
+                                    <input class="star-rating__input" id="star-23" type="radio" name="rating" value="3">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-3" title="Удовлетворительно"></label>
+                                    <input class="star-rating__input" id="star-22" type="radio" name="rating" value="2">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-2" title="Плохо"></label>
+                                    <input class="star-rating__input" id="star-21" type="radio" name="rating" value="1">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-1" title="Ужасно"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </form>
+                    <a href="#" class="btn btn-primary">Купить</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="radish.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Редиска</h5>
+                    <p class="card-text">
+                        Привоз: РБ, Столбцы<br>
+                        Дата привоза: 18.04.2024<br>
+                        Цена за кг.: 8 р.
+                    </p>
+                    <form>
+                        <div class="form-group">
+                            <label>Ваша оценка</label>
+                            <div class="star-rating">
+                                <div class="star-rating__wrap">
+                                    <input class="star-rating__input" id="star-30" type="radio" name="rating" value="5">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-5" title="Отлично"></label>
+                                    <input class="star-rating__input" id="star-29" type="radio" name="rating" value="4">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-4" title="Хорошо"></label>
+                                    <input class="star-rating__input" id="star-28" type="radio" name="rating" value="3">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-3" title="Удовлетворительно"></label>
+                                    <input class="star-rating__input" id="star-27" type="radio" name="rating" value="2">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-2" title="Плохо"></label>
+                                    <input class="star-rating__input" id="star-26" type="radio" name="rating" value="1">
+                                    <label class="star-rating__ico fa fa-star-o fa-lg" for="star-1" title="Ужасно"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </form>
+                    <a href="#" class="btn btn-primary">Купить</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
