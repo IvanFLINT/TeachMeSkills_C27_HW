@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -27,9 +26,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Заявка принята</h5>
                     <p class="card-text">
-                    <p>Name: <c:out value="${name}"/></p>
-                    <p>Email: <c:out value="${email}"/></p>
-                    <p>Password: <c:out value="${password}"/></p>
+                    <p>Name: ${name}</p>
+                    <p>Email: ${email}</p>
+                    <p>Password: ${password}</p>
                     </p>
                 </div>
             </div>
