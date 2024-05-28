@@ -1,0 +1,24 @@
+create table person(
+	id int not null unique,
+	name varchar(10),
+	surname varchar(20),
+	age int,
+	passport_number varchar(7) not null unique
+);
+
+insert into person values(1,'Петя','Петров',24,'AB23476');
+insert into person values(2,'Вася','Васечкин',67,'AB35457');
+insert into person values(3,'Алексей','Иванов',23,'AB32445');
+insert into person values(4,'Иван','Васильевич',45,'AB45342');
+insert into person values(5,'Леня','Лошков',60,'AB90423');
+
+select * from person;
+
+update person set age=34 where id=1;
+select * from person
+
+update person set name='User';
+select * from person
+
+delete from person where age>50;
+select * from person;
