@@ -14,13 +14,13 @@ import java.sql.ResultSet;
 
 @WebServlet("/get")
 public class GetUserServlet extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/WEB-INF/getUser.jsp").forward(req, resp);
-    }
 
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("id");
+        if (id == null || id.isEmpty()) {
+            getServletContext().getRequestDispatcher("/WEB-INF/getUser.jsp").forward(req, resp);
+            return;
+        }
         try (Connection connection = DriverDB.initializeDatabase()) {
             String query = "SELECT * FROM users WHERE id=?";
             PreparedStatement statement = connection.prepareStatement(query);
@@ -33,8 +33,7 @@ public class GetUserServlet extends HttpServlet {
                 req.setAttribute("password", resultSet.getString("password"));
                 req.getRequestDispatcher("/WEB-INF/resultDB.jsp").forward(req, resp);
             } else {
-                resp.getWriter().println("<h4>User not found</h4>");
-                resp.setContentType("text/html");
+                req.getRequestDispatcher("/WEB-INF/operationError.jsp").forward(req, resp);
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -33,8 +33,7 @@ public class ChangeLoginServlet extends HttpServlet {
             if (result > 0) {
                 req.getRequestDispatcher("/WEB-INF/result.jsp").forward(req, resp);
             } else {
-                resp.getWriter().println("<h4>Error updating login</h4>");
-                resp.setContentType("text/html");
+                req.getRequestDispatcher("/WEB-INF/operationError.jsp").forward(req, resp);
             }
         } catch (Exception e) {
             e.printStackTrace();
