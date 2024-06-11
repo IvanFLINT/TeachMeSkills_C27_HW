@@ -19,24 +19,24 @@ public class GetUserServlet extends HttpServlet {
         String id = req.getParameter("id");
         if (id == null || id.isEmpty()) {
             getServletContext().getRequestDispatcher("/WEB-INF/getUser.jsp").forward(req, resp);
-            return;
-        }
-        try (Connection connection = DriverDB.initializeDatabase()) {
-            String query = "SELECT * FROM users WHERE id=?";
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.setInt(1, Integer.parseInt(id));
-            ResultSet resultSet = statement.executeQuery();
+        }else{
+            try (Connection connection = DriverDB.getInstance().initializeDatabase()) {
+                String query = "SELECT * FROM users WHERE id=?";
+                PreparedStatement statement = connection.prepareStatement(query);
+                statement.setInt(1, Integer.parseInt(id));
+                ResultSet resultSet = statement.executeQuery();
 
-            if (resultSet.next()) {
-                req.setAttribute("id", resultSet.getInt("id"));
-                req.setAttribute("login", resultSet.getString("login"));
-                req.setAttribute("password", resultSet.getString("password"));
-                req.getRequestDispatcher("/WEB-INF/resultDB.jsp").forward(req, resp);
-            } else {
-                req.getRequestDispatcher("/WEB-INF/operationError.jsp").forward(req, resp);
+                if (resultSet.next()) {
+                    req.setAttribute("id", resultSet.getInt("id"));
+                    req.setAttribute("login", resultSet.getString("login"));
+                    req.setAttribute("password", resultSet.getString("password"));
+                    req.getRequestDispatcher("/WEB-INF/resultDB.jsp").forward(req, resp);
+                } else {
+                    req.getRequestDispatcher("/WEB-INF/operationError.jsp").forward(req, resp);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 }

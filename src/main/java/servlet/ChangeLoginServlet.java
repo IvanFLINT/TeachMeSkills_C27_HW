@@ -23,7 +23,7 @@ public class ChangeLoginServlet extends HttpServlet {
         String id = req.getParameter("id");
         String newLogin = req.getParameter("login");
 
-        try (Connection connection = DriverDB.initializeDatabase()) {
+        try (Connection connection = DriverDB.getInstance().initializeDatabase()) {
             String query = "UPDATE users SET login=? WHERE id=?";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, newLogin);

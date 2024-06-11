@@ -22,7 +22,7 @@ public class CreateUserServlet extends HttpServlet {
         String login = req.getParameter("login");
         String name = req.getParameter("password");
 
-        try (Connection connection = DriverDB.initializeDatabase()) {
+        try (Connection connection = DriverDB.getInstance().initializeDatabase()) {
             String query = "INSERT INTO users (login, password) VALUES (?, ?)";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, login);

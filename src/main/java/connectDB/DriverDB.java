@@ -18,7 +18,6 @@ public class DriverDB {
             System.out.println("Error loading database driver");
         }
     }
-
     public static DriverDB getInstance() {
         if (instance == null) {
             synchronized (DriverDB.class) {
@@ -31,7 +30,6 @@ public class DriverDB {
     }
 
     public static Connection initializeDatabase() throws SQLException {
-        getInstance();
         return DriverManager.getConnection(URL, USERNAME, PASSWORD);
     }
 }

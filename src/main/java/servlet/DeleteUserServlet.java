@@ -21,7 +21,7 @@ public class DeleteUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("id");
 
-        try (Connection connection = DriverDB.initializeDatabase()) {
+        try (Connection connection = DriverDB.getInstance().initializeDatabase()) {
             String query = "DELETE FROM users WHERE id=?";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setInt(1, Integer.parseInt(id));
