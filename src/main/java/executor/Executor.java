@@ -5,7 +5,7 @@ import task.Task;
 import java.util.List;
 
 public class Executor {
-    private final List<Task> tasks;
+    private List<Task> tasks;
 
     public Executor(List<Task> tasks) {
         this.tasks = tasks;

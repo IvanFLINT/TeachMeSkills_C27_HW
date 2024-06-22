@@ -7,10 +7,9 @@ public class SubTask{
     public SubTask(String name, Task task) {
         this.name = name;
         this.task = task;
-        this.task.addSubTask(this);
     }
 
     public void execute() {
-        System.out.println("выполнение " + name);
+        System.out.println(" Выполнение " + name);
     }
 }

@@ -15,26 +15,26 @@ public class Config {
     @Bean
     public Task task1() {
         Task task1 = new Task("№ 1");
-        new SubTask("первой подзадачи", task1);
-        new SubTask("вторай подзадачи", task1);
+        task1.addSubTask(new SubTask("первой подзадачи", task1));
+        task1.addSubTask(new SubTask("второй подзадачи", task1));
         return task1;
     }
 
     @Bean
     public Task task2() {
         Task task2 = new Task("№ 2");
-        new SubTask("первоя подзадачи", task2);
-        new SubTask("вторая подзадачи", task2);
+        task2.addSubTask(new SubTask("первой подзадачи", task2));
+        task2.addSubTask(new SubTask("второй подзадачи", task2));
         return task2;
     }
 
     @Bean
     public Task task3() {
         Task task3 = new Task("№ 3");
-        new SubTask("первой подзадачи", task3);
-        new SubTask("вторай подзадачи", task3);
-        new SubTask("третьей подзадачи", task3);
-        new SubTask("четвертой подзадачи", task3);
+        task3.addSubTask(new SubTask("первой подзадачи", task3));
+        task3.addSubTask(new SubTask("второй подзадачи", task3));
+        task3.addSubTask(new SubTask("третьей подзадачи", task3));
+        task3.addSubTask(new SubTask("четвертой подзадачи", task3));
         return task3;
     }
 
