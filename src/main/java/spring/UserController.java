@@ -15,12 +15,12 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/index")
-    public String showIndexPage() {
+    public String indexPage() {
         return "index";
     }
 
     @GetMapping("/create")
-    public String showCreateUserForm(Model model) {
+    public String createUserForm(Model model) {
         model.addAttribute("user", new User());
         return "createUser";
     }
@@ -37,7 +37,7 @@ public class UserController {
     }
 
     @GetMapping("/change-login")
-    public String showChangeLoginForm(Model model) {
+    public String changeLoginForm(Model model) {
         model.addAttribute("user", new User());
         return "changeLoginUser";
     }
@@ -56,7 +56,7 @@ public class UserController {
     }
 
     @GetMapping("/delete")
-    public String showDeleteUserForm(Model model) {
+    public String deleteUserForm(Model model) {
         model.addAttribute("user", new User());
         return "deleteUser";
     }
