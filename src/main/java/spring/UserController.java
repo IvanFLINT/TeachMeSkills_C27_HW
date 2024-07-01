@@ -79,7 +79,7 @@ public class UserController {
         } else {
             try {
                 int userId = Integer.parseInt(id);
-                User user = userService.getUserById(userId);
+                User user = userService.getUser(userId);
 
                 if (user != null) {
                     model.addAttribute("user", user);

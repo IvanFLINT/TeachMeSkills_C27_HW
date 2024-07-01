@@ -12,6 +12,8 @@
 
     <mvc:annotation-driven/>
     <context:component-scan base-package="spring"/>
+    <bean id="driverDB" class="connectDB.DriverDB">
+    </bean>
 
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver">

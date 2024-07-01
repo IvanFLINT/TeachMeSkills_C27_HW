@@ -42,7 +42,7 @@ public class UserService {
         }
     }
 
-    public User getUserById(int id) {
+    public User getUser(int id) {
         try (Connection connection = driverDB.initializeDatabase()) {
             String query = "SELECT * FROM users WHERE id=?";
             PreparedStatement statement = connection.prepareStatement(query);
@@ -50,11 +50,11 @@ public class UserService {
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
-                User userDTO = new User();
-                userDTO.setId(resultSet.getInt("id"));
-                userDTO.setLogin(resultSet.getString("login"));
-                userDTO.setPassword(resultSet.getString("password"));
-                return userDTO;
+                User user = new User();
+                user.setId(resultSet.getInt("id"));
+                user.setLogin(resultSet.getString("login"));
+                user.setPassword(resultSet.getString("password"));
+                return user;
             } else {
                 return null;
             }

@@ -26,9 +26,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Опперация выполненна</h5>
                     <p class="card-text">
-                    <p>ID: ${id}</p>
-                    <p>Login: ${login}</p>
-                    <p>Password: ${password}</p>
+                    <p>ID: ${user.id}</p>
+                    <p>Login: ${user.login}</p>
+                    <p>Password: ${user.password}</p>
                     </p>
                     <a class="btn btn-primary" href="/index" role="button">Главная</a>
                 </div>

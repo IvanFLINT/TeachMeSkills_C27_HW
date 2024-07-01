@@ -5,7 +5,6 @@ public class User {
     private String login;
     private String password;
 
-    // геттеры и сеттеры
     public int getId() {
         return id;
     }
