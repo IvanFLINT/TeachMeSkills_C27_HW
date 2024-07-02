@@ -62,8 +62,8 @@ public class UserController {
     }
 
     @PostMapping("/delete")
-    public String deleteUser(@RequestParam("id") String id, Model model) {
-        boolean isDeleted = userService.deleteUser(Integer.parseInt(id));
+    public String deleteUser(@RequestParam("id") int id, Model model) {
+        boolean isDeleted = userService.deleteUser(id);
 
         if (isDeleted) {
             return "result";
