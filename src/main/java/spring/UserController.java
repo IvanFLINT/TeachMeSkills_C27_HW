@@ -73,21 +73,19 @@ public class UserController {
     }
 
     @GetMapping("/get")
-    public String getUserInfo(@RequestParam(name = "id", required = false) String id, Model model) {
-        if (id == null || id.isEmpty()) {
+    public String getUserInfo(@RequestParam(name = "id", required = false) Integer id, Model model) {
+        if (id == null) {
             return "getUser";
         } else {
             try {
-                int userId = Integer.parseInt(id);
-                User user = userService.getUser(userId);
-
+                User user = userService.getUser(id);
                 if (user != null) {
                     model.addAttribute("user", user);
                     return "resultDB";
                 } else {
                     return "operationError";
                 }
-            } catch (NumberFormatException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
                 return "operationError";
             }
