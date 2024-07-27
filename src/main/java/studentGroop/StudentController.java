@@ -27,11 +27,7 @@ public class StudentController {
     }
 
     @PostMapping("/create")
-    public String createStudent(
-            @Valid @ModelAttribute("student") Student student,
-            BindingResult bindingResult,
-            Model model
-    ) {
+    public String createStudent(@Valid @ModelAttribute("student") Student student, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             return "createStudent";
         }
